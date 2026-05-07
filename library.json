@@ -31,7 +31,7 @@
     },
     {
         "name": "proselint",
-        "description": "proselint places the world’s greatest writers and editors by your side.",
+        "description": "proselint places the world\u00e2\u20ac\u2122s greatest writers and editors by your side.",
         "homepage": "https://github.com/errata-ai/proselint",
         "url": "https://github.com/errata-ai/proselint/releases/latest/download/proselint.zip",
         "logo": "https://github.com/amperser.png",
@@ -127,6 +127,17 @@
         "logo": "https://github.com/elastic.png",
         "tags": [
             "style"
+        ]
+    },
+    {
+        "name": "NoAnimalViolence",
+        "description": "Vale style rules for flagging language patterns that have established plain-language alternatives. Covers 60+ documented patterns across comments, docs, and prose.",
+        "homepage": "https://github.com/Open-Paws/vale-no-animal-violence",
+        "url": "https://github.com/Open-Paws/vale-no-animal-violence/releases/latest/download/NoAnimalViolence.zip",
+        "logo": "https://github.com/Open-Paws.png",
+        "tags": [
+            "style",
+            "inclusive-language"
         ]
     }
 ]
