@@ -140,4 +140,16 @@
             "inclusive-language"
         ]
     }
+    {
+    "name": "neighbor",
+    "description": "Vale prose linting rules for accessibility. Flags ableist terms, disability metaphors, English idioms, and directional layout references.",
+    "homepage": "https://github.com/a11yfred/neighbor",
+    "url": "https://github.com/a11yfred/neighbor/releases/latest/download/neighbor.zip",
+    "logo": "https://github.com/a11yfred.png",
+    "tags": [
+        "style",
+        "inclusive-language"
+    ]
+}
+
 ]
