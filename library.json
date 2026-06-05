@@ -139,5 +139,18 @@
             "style",
             "inclusive-language"
         ]
-    }
+    },
+    {
+    "name": "neighbor",
+    "description": "Accessibility and inclusive language rules for Vale. Flags exclusionary language, ableist terms, metaphors, and complex idioms.",
+    "homepage": "https://github.com/a11yfred/neighbor",
+    "url": "https://github.com/a11yfred/neighbor/releases/latest/download/neighbor.zip",
+    "logo": "https://github.com/a11yfred.png",
+    "tags": [
+        "style",
+        "inclusive-language"
+    ]
+}
+
+
 ]
