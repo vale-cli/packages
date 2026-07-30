@@ -150,7 +150,15 @@
         "style",
         "inclusive-language"
     ]
-}
-
-
+    },
+    {
+        "name": "Salesforce",
+        "description": "A Vale-compatible implementation of the Salesforce Writing Style Guide.",
+        "homepage": "https://github.com/sfadriaan/Salesforce",
+        "url": "https://github.com/sfadriaan/Salesforce/releases/latest/download/Salesforce.zip",
+        "logo": "https://github.com/vale-cli.png",
+        "tags": [
+            "style"
+        ]
+    }
 ]
