@@ -19,7 +19,17 @@ BasedOnStyles = Microsoft
 
 Packages fall into two kinds. A *style* is a set of rules to check prose against. A *config* adds support for markup a format needs, and is combined with whatever style you are already using.
 
-Several are Vale implementations of existing linters. Using them means [better handling of markup](https://vale.sh/docs/topics/scoping/) — code blocks skipped, rules aimed at particular sections — no npm or pip to install alongside Vale, and the freedom to mix rules from several packages in one configuration.
+### Pinning a version
+
+Naming a package installs its latest release, so the rules you get can change as the package is updated. To stay on a known version, give the release URL instead of the name:
+
+```ini
+Packages = https://github.com/vale-cli/Google/releases/download/v0.7.0/Google.zip
+```
+
+The style keeps the name of the directory inside the archive, so `BasedOnStyles` stays the same either way. Pinning is worth doing where a new rule appearing on its own would be disruptive — shared repositories, and CI that fails on new alerts.
+
+Several are Vale implementations of existing linters. Using them means [better handling of markup](https://docs.vale.sh/topics/scopes) — code blocks skipped, rules aimed at particular sections — no npm or pip to install alongside Vale, and the freedom to mix rules from several packages in one configuration.
 
 ## Submitting a package
 
@@ -50,6 +60,6 @@ Listing a package here is what lets Vale install it by name, so entries are revi
 
 - What a package is: A directory of YAML rules. Most describe patterns to look for. A rule may also carry a `script` or a `metric` formula, which Vale evaluates in an embedded interpreter given a deliberately small set of imports: rule code can read the text it is checking and compute, and has no access to the filesystem, the network, or the host process.
 
-- What listing does not promise: Each `url` points at a project's latest release, so a package's rules can change after it is added. Review establishes what a package checked when it was listed, not what it will check later. That is a question about results rather than about safety: what a package decides is which alerts you see, and the paragraph above is the extent of it.
+- What listing does not promise: Each `url` points at a project's latest release, so a package's rules can change after it is added. Review establishes what a package checked when it was listed, not what it will check later. That is a question about results rather than about safety: what a package decides is which alerts you see, and the paragraph above is the extent of it. [Pinning a version](#pinning-a-version) holds a package at a release you have already seen.
 
 - If something looks wrong: Open an issue here, and contact the package's own maintainers through its `homepage`. If an entry should no longer be listed, say so in the issue and it can be removed.
