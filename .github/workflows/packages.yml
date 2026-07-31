@@ -1,0 +1,86 @@
+name: Packages
+
+on:
+  pull_request:
+    paths:
+      - library.json
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: runner / verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Vale
+        env:
+          VALE_VERSION: 3.17.0
+        run: |
+          curl -sL --fail -o vale.tar.gz \
+            "https://github.com/vale-cli/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz"
+          tar xzf vale.tar.gz vale
+          ./vale --version
+
+      - name: Find the packages this PR changes
+        id: changed
+        run: |
+          git show "${{ github.event.pull_request.base.sha }}:library.json" > /tmp/base.json 2>/dev/null || echo '[]' > /tmp/base.json
+          python script/changed.py /tmp/base.json library.json | tee /tmp/changed.txt
+          echo "count=$(wc -l < /tmp/changed.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Verify each one loads
+        if: steps.changed.outputs.count != '0'
+        run: |
+          set -euo pipefail
+
+          mkdir -p work/styles
+          printf 'A heading\n\nOne short sentence for the rules to read.\n' > work/sample.md
+
+          while read -r name; do
+            [ -n "$name" ] || continue
+            echo "::group::$name"
+
+            url=$(python -c "
+          import json, sys
+          for e in json.load(open('library.json')):
+              if e['name'] == sys.argv[1]:
+                  print(e['url'])
+                  break
+          " "$name")
+
+            echo "downloading $url"
+            curl -sL --fail -o "work/$name.zip" "$url"
+            unzip -qo "work/$name.zip" -d work/styles
+
+            if [ ! -d "work/styles/$name" ]; then
+              echo "::error::$name.zip does not contain a directory named $name"
+              echo "it holds: $(ls work/styles)"
+              exit 1
+            fi
+
+            printf 'StylesPath = styles\nMinAlertLevel = suggestion\n\n[*]\nBasedOnStyles = %s\n' \
+              "$name" > work/.vale.ini
+
+            rc=0
+            (cd work && ../vale --no-global --config=.vale.ini sample.md) || rc=$?
+
+            if [ "$rc" -ge 2 ]; then
+              echo "::error::$name has rules that do not load (vale exit $rc)"
+              exit 1
+            fi
+            echo "$name loaded (vale exit $rc)"
+
+            rm -rf "work/styles/$name"
+            echo "::endgroup::"
+          done < /tmp/changed.txt
