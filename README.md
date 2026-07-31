@@ -46,10 +46,10 @@ Opening the pull request runs the checks described below.
 
 Listing a package here is what lets Vale install it by name, so entries are reviewed rather than merged automatically.
 
-**What each pull request has to pass.** Adding or repointing an entry downloads that package and loads it into Vale, which confirms its rules compile. Separately, `library.json` is checked for valid JSON, the expected keys on every entry, alphabetical order, and a working `homepage` and `url`.
+- What each pull request has to pass: Adding or repointing an entry downloads that package and loads it into Vale, which confirms its rules compile. Separately, `library.json` is checked for valid JSON, the expected keys on every entry, alphabetical order, and a working `homepage` and `url`.
 
-**What a package is.** A directory of YAML rules. Most describe patterns to look for. A rule may also carry a `script` or a `metric` formula, which Vale evaluates in an embedded interpreter given a deliberately small set of imports: rule code can read the text it is checking and compute, and has no access to the filesystem, the network, or the host process.
+- What a package is: A directory of YAML rules. Most describe patterns to look for. A rule may also carry a `script` or a `metric` formula, which Vale evaluates in an embedded interpreter given a deliberately small set of imports: rule code can read the text it is checking and compute, and has no access to the filesystem, the network, or the host process.
 
-**What listing does not promise.** Each `url` points at a project's latest release, so a package's rules can change after it is added. Review establishes what a package checked when it was listed, not what it will check later. That is a question about results rather than about safety: what a package decides is which alerts you see, and the paragraph above is the extent of it.
+- What listing does not promise: Each `url` points at a project's latest release, so a package's rules can change after it is added. Review establishes what a package checked when it was listed, not what it will check later. That is a question about results rather than about safety: what a package decides is which alerts you see, and the paragraph above is the extent of it.
 
-**If something looks wrong.** Open an issue here, and contact the package's own maintainers through its `homepage`. If an entry should no longer be listed, say so in the issue and it can be removed.
+- If something looks wrong: Open an issue here, and contact the package's own maintainers through its `homepage`. If an entry should no longer be listed, say so in the issue and it can be removed.
