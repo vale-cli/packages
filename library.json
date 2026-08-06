@@ -10,6 +10,16 @@
         ]
     },
     {
+        "name": "ClearProse",
+        "description": "Prohibits em dashes in reStructuredText prose, without reporting them inside code blocks or inline literals.",
+        "homepage": "https://github.com/adamtheturtle/vale-style-clear-prose",
+        "url": "https://github.com/adamtheturtle/vale-style-clear-prose/releases/latest/download/ClearProse.zip",
+        "logo": "https://github.com/adamtheturtle.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
         "name": "Elastic",
         "description": "Elastic Docs' style guide rules for the Vale linter.",
         "homepage": "https://github.com/elastic/vale-rules",
