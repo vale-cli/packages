@@ -50,6 +50,18 @@ Fork this repo, add an entry to [`library.json`](library.json), and open a pull 
 
 Entries are ordered by `name`, and `url` should point at a release asset whose archive contains a single directory matching `name`. Tag it `style` or `config`; further tags may be added to describe what it covers. `logo` is optional and defaults to nothing.
 
+### Shipping license files
+
+Downstream distributors—package managers repackaging these archives—need attribution documents inside the archive itself, not just in the repository. To support that, ship your license alongside the rules and declare it in the style's `meta.json`:
+
+```json
+{
+    "license_files": ["LICENSE"]
+}
+```
+
+Each declared path is relative to the style directory, and the checks verify it exists in the released archive. The declaration is optional, but a declared file that's missing fails the check.
+
 Opening the pull request runs the checks described below.
 
 ## Security
