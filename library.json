@@ -1,5 +1,45 @@
 [
     {
+        "name": "AiTells",
+        "description": "Flags the tells of AI-written prose: em-dash habits, epigrams, abstract-noun triads, clichés, and 13 more benchmarked rules.",
+        "homepage": "https://github.com/krishnasunkam/vale-ai-tells",
+        "url": "https://github.com/krishnasunkam/vale-ai-tells/releases/latest/download/AiTells.zip",
+        "logo": "https://github.com/krishnasunkam.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
+        "name": "AsciiDoc",
+        "description": "A Vale-compatible implementation of select AsciiDoc syntax rules.",
+        "homepage": "https://redhat-documentation.github.io/vale-at-red-hat/index.html#asciidoc-style-for-vale",
+        "url": "https://github.com/redhat-documentation/vale-at-red-hat/releases/latest/download/AsciiDoc.zip",
+        "logo": "https://github.com/redhat-documentation.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
+        "name": "AsciiDocDITA",
+        "description": "A Vale-compatible implementation of select DITA transformation guidelines for transforming existing AsciiDoc files into a DITA-compatible format.",
+        "homepage": "https://github.com/jhradilek/asciidoctor-dita-vale",
+        "url": "https://github.com/jhradilek/asciidoctor-dita-vale/releases/latest/download/AsciiDocDITA.zip",
+        "logo": "https://github.com/redhat-documentation.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
+        "name": "Elastic",
+        "description": "Elastic Docs' style guide rules for the Vale linter.",
+        "homepage": "https://github.com/elastic/vale-rules",
+        "url": "https://github.com/elastic/vale-rules/releases/latest/download/elastic-vale.zip",
+        "logo": "https://github.com/elastic.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
         "name": "Google",
         "description": "A Vale-compatible implementation of the Google Developer Documentation Style Guide.",
         "homepage": "https://github.com/errata-ai/Google",
@@ -7,6 +47,16 @@
         "logo": "https://github.com/google.png",
         "tags": [
             "style"
+        ]
+    },
+    {
+        "name": "Hugo",
+        "description": "Adds support for Hugo shortcodes and other non-standard markup.",
+        "homepage": "https://github.com/errata-ai/Hugo",
+        "url": "https://github.com/errata-ai/Hugo/releases/latest/download/Hugo.zip",
+        "logo": "https://github.com/gohugoio.png",
+        "tags": [
+            "config"
         ]
     },
     {
@@ -20,6 +70,16 @@
         ]
     },
     {
+        "name": "MDX",
+        "description": "Adds support for MDX comments and other non-standard markup.",
+        "homepage": "https://github.com/errata-ai/MDX",
+        "url": "https://github.com/errata-ai/MDX/releases/latest/download/MDX.zip",
+        "logo": "https://github.com/mdx-js.png",
+        "tags": [
+            "config"
+        ]
+    },
+    {
         "name": "Microsoft",
         "description": "A Vale-compatible implementation of the Microsoft Writing Style Guide.",
         "homepage": "https://github.com/errata-ai/Microsoft",
@@ -27,6 +87,78 @@
         "logo": "https://github.com/microsoft.png",
         "tags": [
             "style"
+        ]
+    },
+    {
+        "name": "NoAnimalViolence",
+        "description": "Vale style rules for flagging language patterns that have established plain-language alternatives. Covers 60+ documented patterns across comments, docs, and prose.",
+        "homepage": "https://github.com/Open-Paws/vale-no-animal-violence",
+        "url": "https://github.com/Open-Paws/vale-no-animal-violence/releases/latest/download/NoAnimalViolence.zip",
+        "logo": "https://github.com/Open-Paws.png",
+        "tags": [
+            "style",
+            "inclusive-language"
+        ]
+    },
+    {
+        "name": "OpenShiftAsciiDoc",
+        "description": "A Vale-compatible implementation of select AsciiDoc guidance from the OpenShift docs contributor guidelines.",
+        "homepage": "https://redhat-documentation.github.io/vale-at-red-hat/index.html#asciidoc-openshift-style-for-vale",
+        "url": "https://github.com/redhat-documentation/vale-at-red-hat/releases/latest/download/OpenShiftAsciiDoc.zip",
+        "logo": "https://github.com/redhat-documentation.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
+        "name": "Readability",
+        "description": "Vale-compatible implementations of many popular readability metrics.",
+        "homepage": "https://github.com/errata-ai/Readability",
+        "url": "https://github.com/errata-ai/Readability/releases/latest/download/Readability.zip",
+        "logo": "https://github.com/errata-ai.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
+        "name": "RedHat",
+        "description": "A Vale-compatible implementation of the Red Hat Supplementary Style Guide.",
+        "homepage": "https://redhat-documentation.github.io/vale-at-red-hat/index.html#redhat-style-for-vale",
+        "url": "https://github.com/redhat-documentation/vale-at-red-hat/releases/latest/download/RedHat.zip",
+        "logo": "https://github.com/redhat-documentation.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
+        "name": "Salesforce",
+        "description": "A Vale-compatible implementation of the Salesforce Writing Style Guide.",
+        "homepage": "https://github.com/sfadriaan/Salesforce",
+        "url": "https://github.com/sfadriaan/Salesforce/releases/latest/download/Salesforce.zip",
+        "logo": "https://github.com/salesforce.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
+        "name": "alex",
+        "description": "Catch insensitive, inconsiderate writing.",
+        "homepage": "https://github.com/errata-ai/alex",
+        "url": "https://github.com/errata-ai/alex/releases/latest/download/alex.zip",
+        "logo": "https://github.com/get-alex.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
+        "name": "neighbor",
+        "description": "Accessibility and inclusive language rules for Vale. Flags exclusionary language, ableist terms, metaphors, and complex idioms.",
+        "homepage": "https://github.com/a11yfred/neighbor",
+        "url": "https://github.com/a11yfred/neighbor/releases/latest/download/neighbor.zip",
+        "logo": "https://github.com/a11yfred.png",
+        "tags": [
+            "style",
+            "inclusive-language"
         ]
     },
     {
@@ -45,86 +177,6 @@
         "homepage": "https://github.com/errata-ai/write-good",
         "url": "https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip",
         "logo": "https://github.com/npm.png",
-        "tags": [
-            "style"
-        ]
-    },
-    {
-        "name": "alex",
-        "description": "Catch insensitive, inconsiderate writing.",
-        "homepage": "https://github.com/errata-ai/alex",
-        "url": "https://github.com/errata-ai/alex/releases/latest/download/alex.zip",
-        "logo": "https://github.com/get-alex.png",
-        "tags": [
-            "style"
-        ]
-    },
-    {
-        "name": "Readability",
-        "description": "Vale-compatible implementations of many popular readability metrics.",
-        "homepage": "https://github.com/errata-ai/Readability",
-        "url": "https://github.com/errata-ai/Readability/releases/latest/download/Readability.zip",
-        "logo": "https://github.com/errata-ai.png",
-        "tags": [
-            "style"
-        ]
-    },
-    {
-        "name": "Hugo",
-        "description": "Adds support for Hugo shortcodes and other non-standard markup.",
-        "homepage": "https://github.com/errata-ai/Hugo",
-        "url": "https://github.com/errata-ai/Hugo/releases/latest/download/Hugo.zip",
-        "logo": "https://github.com/gohugoio.png",
-        "tags": [
-            "config"
-        ]
-    },
-    {
-        "name": "MDX",
-        "description": "Adds support for MDX comments and other non-standard markup.",
-        "homepage": "https://github.com/errata-ai/MDX",
-        "url": "https://github.com/errata-ai/MDX/releases/latest/download/MDX.zip",
-        "logo": "https://github.com/mdx-js.png",
-        "tags": [
-            "config"
-        ]
-    },
-    {
-        "name": "RedHat",
-        "description": "A Vale-compatible implementation of the Red Hat Supplementary Style Guide.",
-        "homepage": "https://redhat-documentation.github.io/vale-at-red-hat/docs/main/user-guide/redhat-style-for-vale/",
-        "url": "https://github.com/redhat-documentation/vale-at-red-hat/releases/latest/download/RedHat.zip",
-        "logo": "https://github.com/redhat-documentation.png",
-        "tags": [
-            "style"
-        ]
-    },
-    {
-        "name": "AsciiDoc",
-        "description": "A Vale-compatible implementation of select AsciiDoc syntax rules.",
-        "homepage": "https://redhat-documentation.github.io/vale-at-red-hat/docs/main/user-guide/asciidoc-style-for-vale/",
-        "url": "https://github.com/redhat-documentation/vale-at-red-hat/releases/latest/download/AsciiDoc.zip",
-        "logo": "https://github.com/redhat-documentation.png",
-        "tags": [
-            "style"
-        ]
-    },
-    {
-        "name": "OpenShiftAsciiDoc",
-        "description": "A Vale-compatible implementation of select AsciiDoc guidance from the OpenShift docs contributor guidelines.",
-        "homepage": "https://redhat-documentation.github.io/vale-at-red-hat/docs/main/user-guide/openshift-asciidoc-style-for-vale/",
-        "url": "https://github.com/redhat-documentation/vale-at-red-hat/releases/latest/download/OpenShiftAsciiDoc.zip",
-        "logo": "https://github.com/redhat-documentation.png",
-        "tags": [
-            "style"
-        ]
-    },
-    {
-        "name": "AsciiDocDITA",
-        "description": "A Vale-compatible implementation of select DITA transformation guidelines for transforming existing AsciiDoc files into a DITA-compatible format.",
-        "homepage": "https://github.com/jhradilek/asciidoctor-dita-vale",
-        "url": "https://github.com/jhradilek/asciidoctor-dita-vale/releases/latest/download/AsciiDocDITA.zip",
-        "logo": "https://github.com/redhat-documentation.png",
         "tags": [
             "style"
         ]
