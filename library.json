@@ -90,17 +90,6 @@
         ]
     },
     {
-        "name": "NoAnimalViolence",
-        "description": "Vale style rules for flagging language patterns that have established plain-language alternatives. Covers 60+ documented patterns across comments, docs, and prose.",
-        "homepage": "https://github.com/Open-Paws/vale-no-animal-violence",
-        "url": "https://github.com/Open-Paws/vale-no-animal-violence/releases/latest/download/NoAnimalViolence.zip",
-        "logo": "https://github.com/Open-Paws.png",
-        "tags": [
-            "style",
-            "inclusive-language"
-        ]
-    },
-    {
         "name": "OpenShiftAsciiDoc",
         "description": "A Vale-compatible implementation of select AsciiDoc guidance from the OpenShift docs contributor guidelines.",
         "homepage": "https://redhat-documentation.github.io/vale-at-red-hat/index.html#asciidoc-openshift-style-for-vale",
