@@ -153,7 +153,7 @@
     },
     {
         "name": "proselint",
-        "description": "proselint places the worldâ€™s greatest writers and editors by your side.",
+        "description": "proselint places the world’s greatest writers and editors by your side.",
         "homepage": "https://github.com/errata-ai/proselint",
         "url": "https://github.com/errata-ai/proselint/releases/latest/download/proselint.zip",
         "logo": "https://github.com/amperser.png",
