@@ -20,6 +20,16 @@
         ]
     },
     {
+        "name": "AsciiDocDITA",
+        "description": "A Vale-compatible implementation of select DITA transformation guidelines for transforming existing AsciiDoc files into a DITA-compatible format.",
+        "homepage": "https://github.com/jhradilek/asciidoctor-dita-vale",
+        "url": "https://github.com/jhradilek/asciidoctor-dita-vale/releases/latest/download/AsciiDocDITA.zip",
+        "logo": "https://github.com/redhat-documentation.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
         "name": "Elastic",
         "description": "Elastic Docs' style guide rules for the Vale linter.",
         "homepage": "https://github.com/elastic/vale-rules",
