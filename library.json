@@ -50,6 +50,17 @@
         ]
     },
     {
+        "name": "Harper",
+        "description": "A Vale-compatible implementation of the Harper grammar checker.",
+        "homepage": "https://github.com/vale-cli/Harper",
+        "url": "https://github.com/vale-cli/Harper/releases/latest/download/Harper.zip",
+        "logo": "https://writewithharper.com/apple-touch-icon.png",
+        "tags": [
+            "style",
+            "grammar"
+        ]
+    },
+    {
         "name": "Hugo",
         "description": "Adds support for Hugo shortcodes and other non-standard markup.",
         "homepage": "https://github.com/errata-ai/Hugo",
