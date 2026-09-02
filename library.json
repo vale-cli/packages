@@ -141,6 +141,26 @@
         ]
     },
     {
+        "name": "Std",
+        "description": "The standard library for Vale: general-purpose rules you extend to build your own style.",
+        "homepage": "https://github.com/vale-cli/Std",
+        "url": "https://github.com/vale-cli/Std/releases/latest/download/Std.zip",
+        "logo": "https://github.com/vale-cli.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
+        "name": "ai-tells",
+        "description": "Flags the fingerprints of AI-written prose, with rule messages that name the fix rather than only the phrase.",
+        "homepage": "https://github.com/tbhb/vale-ai-tells",
+        "url": "https://github.com/tbhb/vale-ai-tells/releases/latest/download/ai-tells.zip",
+        "logo": "https://github.com/tbhb.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
         "name": "alex",
         "description": "Catch insensitive, inconsiderate writing.",
         "homepage": "https://github.com/errata-ai/alex",
