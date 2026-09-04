@@ -1,0 +1,30 @@
+# A chat transcript with `user:` and `assistant:` turns. Only the model's
+# turns are exposed, so the prompts are never linted.
+#
+#   [*.txt]
+#   BasedOnStyles = Vale
+#   View = Transcript
+engine: textfsm
+template: |
+  Value List Assistant (.*)
+  Value List User (.*)
+
+  Start
+    ^assistant: ${Assistant} -> Assistant
+    ^user: ${User} -> User
+
+  Assistant
+    ^(?:user|assistant): -> Continue.Record
+    ^assistant: ${Assistant}
+    ^user: ${User} -> User
+    ^${Assistant}
+
+  User
+    ^(?:user|assistant): -> Continue.Record
+    ^user: ${User}
+    ^assistant: ${Assistant} -> Assistant
+    ^${User}
+scopes:
+  - name: assistant
+    expr: Assistant
+    type: md

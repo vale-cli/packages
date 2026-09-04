@@ -1,0 +1,18 @@
+# An OpenAPI description: the title, and every `description` and `summary`
+# field, which are Markdown by the specification.
+#
+#   [*.{yml,yaml}]
+#   BasedOnStyles = Vale
+#   View = OpenAPI
+engine: dasel
+scopes:
+  - name: title
+    expr: info.title
+
+  - name: description
+    expr: 'search(has("description")).map(description)'
+    type: md
+
+  - name: summary
+    expr: 'search(has("summary")).map(summary)'
+    type: md

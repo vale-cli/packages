@@ -1,0 +1,13 @@
+{{- /* GitHub Actions annotations: one workflow command per alert, so each
+       shows up on the changed line in the pull request. Suggestions become
+       notices, which GitHub shows without failing the check. */ -}}
+{{- range .Files -}}
+{{- $path := .Path -}}
+{{- range .Alerts -}}
+{{- $level := "notice" -}}
+{{- if eq .Severity "error" -}}{{- $level = "error" -}}
+{{- else if eq .Severity "warning" -}}{{- $level = "warning" -}}
+{{- end -}}
+::{{ $level }} file={{ $path }},line={{ .Line }},col={{ index .Span 0 }},endColumn={{ index .Span 1 }},title={{ .Check }}::{{ .Message }}
+{{ end -}}
+{{- end -}}

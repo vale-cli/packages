@@ -64,6 +64,26 @@ Each declared path is relative to the style directory, and the checks verify it 
 
 Opening the pull request runs the checks described below.
 
+## Sharing an asset
+
+Some things are one file rather than a package: a [view](https://docs.vale.sh/topics/views) that reads a commit message or a chat transcript, a [filter](https://docs.vale.sh/cli/vale#filter) for a CI run. [`assets.json`](assets.json) lists those, and the files live under [`assets/`](assets). They appear at **[vale.sh/explorer/assets](https://vale.sh/explorer/assets)**, each with the line of `.vale.ini` or the command that puts it to use.
+
+To add one, put the file under `assets/<kind>s/` and add an entry:
+
+```json
+{
+    "name": "Commit",
+    "kind": "view",
+    "description": "A commit message as a subject, a body, and trailers, each its own scope.",
+    "path": "assets/views/Commit.yml",
+    "section": "COMMIT_EDITMSG",
+    "requires": ">=3.21.0",
+    "tags": ["textfsm", "git"]
+}
+```
+
+`kind` is one of `view`, `filter`, `script`, `action`, `vocabulary`, or `template`. Entries are ordered by `kind`, then `name`. A view gives `section`, the `.vale.ini` section it is meant for. `requires` is the Vale version the asset needs, and is optional.
+
 ## Security
 
 Listing a package here is what lets Vale install it by name, so entries are reviewed rather than merged automatically.

@@ -1,0 +1,9 @@
+{{- /* JSON Lines: one object per alert, for a tool or an agent that reads
+       alerts one at a time. Every field is JSON-encoded, so a message with a
+       quote in it stays valid. */ -}}
+{{- range .Files -}}
+{{- $path := .Path -}}
+{{- range .Alerts -}}
+{{ dict "path" $path "line" .Line "column" (index .Span 0) "end" (index .Span 1) "check" .Check "severity" .Severity "message" .Message "match" .Match "link" .Link | toJson }}
+{{ end -}}
+{{- end -}}

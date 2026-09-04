@@ -1,0 +1,16 @@
+{{- /* A Markdown summary, for a pull request comment or a job summary:
+       a table per file, then the totals. */ -}}
+{{- $e := 0 -}}{{- $w := 0 -}}{{- $s := 0 -}}
+{{- range .Files -}}
+### `{{ .Path }}`
+
+| Line | Level | Rule | Message |
+| ---: | ----- | ---- | ------- |
+{{ range .Alerts -}}
+{{- if eq .Severity "error" -}}{{- $e = add1 $e -}}
+{{- else if eq .Severity "warning" -}}{{- $w = add1 $w -}}
+{{- else -}}{{- $s = add1 $s -}}{{- end -}}
+| {{ .Line }}:{{ index .Span 0 }} | {{ .Severity }} | `{{ .Check }}` | {{ .Message }} |
+{{ end }}
+{{ end -}}
+**{{ $e }} {{ $e | int | plural "error" "errors" }}, {{ $w }} {{ $w | int | plural "warning" "warnings" }}, {{ $s }} {{ $s | int | plural "suggestion" "suggestions" }}.**

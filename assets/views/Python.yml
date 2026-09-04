@@ -1,0 +1,17 @@
+# Python source: comments and docstrings, read as Markdown.
+#
+#   [*.py]
+#   BasedOnStyles = Vale
+#   View = Python
+engine: tree-sitter
+scopes:
+  - name: comment
+    expr: (comment)+ @comment
+    type: md
+
+  - name: docstring
+    expr: |
+      ((function_definition
+        body: (block . (expression_statement (string) @docstring)))
+      (#offset! @docstring 0 3 0 -3))
+    type: md

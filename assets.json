@@ -1,0 +1,106 @@
+[
+    {
+        "name": "errors",
+        "kind": "filter",
+        "description": "Only error-level rules, for a hook or a CI step that should block on nothing else.",
+        "path": "assets/filters/errors.expr",
+        "tags": [
+            "ci"
+        ]
+    },
+    {
+        "name": "no-spelling",
+        "kind": "filter",
+        "description": "Every rule but the spell checker, for a run over text full of names Vale doesn't know.",
+        "path": "assets/filters/no-spelling.expr",
+        "tags": []
+    },
+    {
+        "name": "github",
+        "kind": "template",
+        "description": "GitHub Actions annotations, one per alert, so each shows on its line in the pull request.",
+        "path": "assets/templates/github.tmpl",
+        "tags": [
+            "ci",
+            "github"
+        ]
+    },
+    {
+        "name": "jsonl",
+        "kind": "template",
+        "description": "JSON Lines, one object per alert, for a tool or an agent that reads alerts one at a time.",
+        "path": "assets/templates/jsonl.tmpl",
+        "tags": [
+            "ci",
+            "ai"
+        ]
+    },
+    {
+        "name": "summary",
+        "kind": "template",
+        "description": "A Markdown summary with a table per file and the totals, for a pull request comment or a job summary.",
+        "path": "assets/templates/summary.tmpl",
+        "tags": [
+            "ci",
+            "github"
+        ]
+    },
+    {
+        "name": "Commit",
+        "kind": "view",
+        "description": "A commit message as a subject, a body, and trailers, each its own scope.",
+        "path": "assets/views/Commit.yml",
+        "section": "COMMIT_EDITMSG",
+        "requires": ">=3.21.0",
+        "tags": [
+            "textfsm",
+            "git"
+        ]
+    },
+    {
+        "name": "OpenAPI",
+        "kind": "view",
+        "description": "The title and every description and summary in an OpenAPI document, read as Markdown.",
+        "path": "assets/views/OpenAPI.yml",
+        "section": "*.{yml,yaml}",
+        "tags": [
+            "dasel",
+            "api"
+        ]
+    },
+    {
+        "name": "Python",
+        "kind": "view",
+        "description": "Comments and docstrings in Python source, read as Markdown.",
+        "path": "assets/views/Python.yml",
+        "section": "*.py",
+        "tags": [
+            "tree-sitter",
+            "code"
+        ]
+    },
+    {
+        "name": "Subtitles",
+        "kind": "view",
+        "description": "The cue text of a SubRip file, with the indexes and timings left alone.",
+        "path": "assets/views/Subtitles.yml",
+        "section": "*.srt",
+        "requires": ">=3.21.0",
+        "tags": [
+            "textfsm",
+            "media"
+        ]
+    },
+    {
+        "name": "Transcript",
+        "kind": "view",
+        "description": "A chat transcript, exposing only the model's turns so the prompts are never linted.",
+        "path": "assets/views/Transcript.yml",
+        "section": "*.txt",
+        "requires": ">=3.21.0",
+        "tags": [
+            "textfsm",
+            "ai"
+        ]
+    }
+]

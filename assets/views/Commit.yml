@@ -1,0 +1,29 @@
+# A commit message: a subject line, a blank line, a body, and trailers.
+#
+#   [COMMIT_EDITMSG]
+#   BasedOnStyles = Vale
+#   View = Commit
+#
+# Then, in a commit-msg hook: vale --path=COMMIT_EDITMSG < "$1"
+engine: textfsm
+template: |
+  Value Subject (.+)
+  Value List Body (.*)
+  Value List Trailer ([A-Z][\w-]+: .+)
+
+  Start
+    ^${Subject} -> Body
+
+  Body
+    ^${Trailer}
+    ^${Body}
+scopes:
+  - name: subject
+    expr: Subject
+
+  - name: body
+    expr: Body
+    type: md
+
+  - name: trailer
+    expr: Trailer

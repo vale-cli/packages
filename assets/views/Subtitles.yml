@@ -1,0 +1,24 @@
+# SubRip subtitles: a cue is an index, a timing line, and one or more lines
+# of text, separated by blank lines. Only the text is exposed.
+#
+#   [*.srt]
+#   BasedOnStyles = Vale
+#   View = Subtitles
+engine: textfsm
+template: |
+  Value Index (\d+)
+  Value Timing (\d\d:\d\d:\d\d,\d\d\d --> \d\d:\d\d:\d\d,\d\d\d.*)
+  Value List Cue (.+)
+
+  Start
+    ^${Index}$ -> Timing
+
+  Timing
+    ^${Timing}$ -> Cue
+
+  Cue
+    ^$ -> Record Start
+    ^${Cue}
+scopes:
+  - name: cue
+    expr: Cue
