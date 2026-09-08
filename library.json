@@ -42,8 +42,8 @@
     {
         "name": "Google",
         "description": "A Vale-compatible implementation of the Google Developer Documentation Style Guide.",
-        "homepage": "https://github.com/errata-ai/Google",
-        "url": "https://github.com/errata-ai/Google/releases/latest/download/Google.zip",
+        "homepage": "https://github.com/vale-cli/Google",
+        "url": "https://github.com/vale-cli/Google/releases/latest/download/Google.zip",
         "logo": "https://github.com/google.png",
         "tags": [
             "style"
@@ -63,8 +63,8 @@
     {
         "name": "Hugo",
         "description": "Adds support for Hugo shortcodes and other non-standard markup.",
-        "homepage": "https://github.com/errata-ai/Hugo",
-        "url": "https://github.com/errata-ai/Hugo/releases/latest/download/Hugo.zip",
+        "homepage": "https://github.com/vale-cli/Hugo",
+        "url": "https://github.com/vale-cli/Hugo/releases/latest/download/Hugo.zip",
         "logo": "https://github.com/gohugoio.png",
         "tags": [
             "config"
@@ -73,8 +73,8 @@
     {
         "name": "Joblint",
         "description": "Test tech job posts for issues with sexism, culture, expectations, and recruiter fails.",
-        "homepage": "https://github.com/errata-ai/Joblint",
-        "url": "https://github.com/errata-ai/Joblint/releases/latest/download/Joblint.zip",
+        "homepage": "https://github.com/vale-cli/Joblint",
+        "url": "https://github.com/vale-cli/Joblint/releases/latest/download/Joblint.zip",
         "logo": "https://github.com/npm.png",
         "tags": [
             "style"
@@ -83,8 +83,8 @@
     {
         "name": "MDX",
         "description": "Adds support for MDX comments and other non-standard markup.",
-        "homepage": "https://github.com/errata-ai/MDX",
-        "url": "https://github.com/errata-ai/MDX/releases/latest/download/MDX.zip",
+        "homepage": "https://github.com/vale-cli/MDX",
+        "url": "https://github.com/vale-cli/MDX/releases/latest/download/MDX.zip",
         "logo": "https://github.com/mdx-js.png",
         "tags": [
             "config"
@@ -93,8 +93,8 @@
     {
         "name": "Microsoft",
         "description": "A Vale-compatible implementation of the Microsoft Writing Style Guide.",
-        "homepage": "https://github.com/errata-ai/Microsoft",
-        "url": "https://github.com/errata-ai/Microsoft/releases/latest/download/Microsoft.zip",
+        "homepage": "https://github.com/vale-cli/Microsoft",
+        "url": "https://github.com/vale-cli/Microsoft/releases/latest/download/Microsoft.zip",
         "logo": "https://github.com/microsoft.png",
         "tags": [
             "style"
@@ -113,9 +113,9 @@
     {
         "name": "Readability",
         "description": "Vale-compatible implementations of many popular readability metrics.",
-        "homepage": "https://github.com/errata-ai/Readability",
-        "url": "https://github.com/errata-ai/Readability/releases/latest/download/Readability.zip",
-        "logo": "https://github.com/errata-ai.png",
+        "homepage": "https://github.com/vale-cli/Readability",
+        "url": "https://github.com/vale-cli/Readability/releases/latest/download/Readability.zip",
+        "logo": "https://github.com/vale-cli.png",
         "tags": [
             "style"
         ]
@@ -163,8 +163,8 @@
     {
         "name": "alex",
         "description": "Catch insensitive, inconsiderate writing.",
-        "homepage": "https://github.com/errata-ai/alex",
-        "url": "https://github.com/errata-ai/alex/releases/latest/download/alex.zip",
+        "homepage": "https://github.com/vale-cli/alex",
+        "url": "https://github.com/vale-cli/alex/releases/latest/download/alex.zip",
         "logo": "https://github.com/get-alex.png",
         "tags": [
             "style"
@@ -184,8 +184,8 @@
     {
         "name": "proselint",
         "description": "proselint places the world’s greatest writers and editors by your side.",
-        "homepage": "https://github.com/errata-ai/proselint",
-        "url": "https://github.com/errata-ai/proselint/releases/latest/download/proselint.zip",
+        "homepage": "https://github.com/vale-cli/proselint",
+        "url": "https://github.com/vale-cli/proselint/releases/latest/download/proselint.zip",
         "logo": "https://github.com/amperser.png",
         "tags": [
             "style"
@@ -194,8 +194,8 @@
     {
         "name": "write-good",
         "description": "Naive linter for English prose for developers who can't write good.",
-        "homepage": "https://github.com/errata-ai/write-good",
-        "url": "https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip",
+        "homepage": "https://github.com/vale-cli/write-good",
+        "url": "https://github.com/vale-cli/write-good/releases/latest/download/write-good.zip",
         "logo": "https://github.com/npm.png",
         "tags": [
             "style"
