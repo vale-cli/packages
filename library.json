@@ -30,6 +30,16 @@
         ]
     },
     {
+        "name": "Commits",
+        "description": "Commit messages: nine conventions and the rule sets of commitlint, gitlint, committed, conform, and commitizen, read through a View.",
+        "homepage": "https://github.com/jdkato/commits",
+        "url": "https://github.com/jdkato/commits/releases/latest/download/Commits.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
         "name": "Elastic",
         "description": "Elastic Docs' style guide rules for the Vale linter.",
         "homepage": "https://github.com/elastic/vale-rules",
