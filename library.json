@@ -91,6 +91,16 @@
         ]
     },
     {
+        "name": "Journals",
+        "description": "Scientific manuscripts: a core of conventions for units, statistics, figures, and citations, the IMRaD structure, the Nature and PLOS ONE author guidelines, and the CONSORT, STROBE, and PRISMA checklists.",
+        "homepage": "https://github.com/jdkato/journals",
+        "url": "https://github.com/jdkato/journals/releases/latest/download/Journals.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
         "name": "MDX",
         "description": "Adds support for MDX comments and other non-standard markup.",
         "homepage": "https://github.com/vale-cli/MDX",
