@@ -50,6 +50,16 @@
         ]
     },
     {
+        "name": "Fiction",
+        "description": "Fiction: filter words, told emotions, stock phrases, and dialogue punctuation, with the rules of Elmore Leonard, Chuck Palahniuk, and Strunk's 1918 Elements of Style.",
+        "homepage": "https://github.com/jdkato/fiction",
+        "url": "https://github.com/jdkato/fiction/releases/latest/download/Fiction.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
         "name": "Google",
         "description": "A Vale-compatible implementation of the Google Developer Documentation Style Guide.",
         "homepage": "https://github.com/vale-cli/Google",
