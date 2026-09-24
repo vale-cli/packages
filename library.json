@@ -121,6 +121,26 @@
         ]
     },
     {
+        "name": "Comments",
+        "description": "The comments in code: Go doc comments, Javadoc, and KDoc conventions, plus owned TODOs and no commented-out code in any language Vale extracts comments from.",
+        "homepage": "https://github.com/jdkato/comments",
+        "url": "https://github.com/jdkato/comments/releases/latest/download/Comments.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
+        "name": "Diataxis",
+        "description": "The four kinds of documentation in Diátaxis, each checked against its job: tutorials that walk, how-to guides that reach a goal, reference that describes, explanation that answers why.",
+        "homepage": "https://github.com/jdkato/diataxis",
+        "url": "https://github.com/jdkato/diataxis/releases/latest/download/Diataxis.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
         "name": "MDX",
         "description": "Adds support for MDX comments and other non-standard markup.",
         "homepage": "https://github.com/vale-cli/MDX",
