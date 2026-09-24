@@ -111,6 +111,16 @@
         ]
     },
     {
+        "name": "A11y",
+        "description": "Accessible writing: alt text, link text, heading structure, table headers, instructions that rely on color or position, a reading grade per paragraph, and an inclusive-language word list, from the parts of WCAG 2.2 that live in the text.",
+        "homepage": "https://github.com/jdkato/a11y",
+        "url": "https://github.com/jdkato/a11y/releases/latest/download/A11y.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
         "name": "MDX",
         "description": "Adds support for MDX comments and other non-standard markup.",
         "homepage": "https://github.com/vale-cli/MDX",
