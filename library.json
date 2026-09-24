@@ -152,9 +152,9 @@
     },
     {
         "name": "Readability",
-        "description": "Vale-compatible implementations of many popular readability metrics.",
-        "homepage": "https://github.com/vale-cli/Readability",
-        "url": "https://github.com/vale-cli/Readability/releases/latest/download/Readability.zip",
+        "description": "Readability scores: Automated Readability Index, Coleman-Liau, Flesch-Kincaid, Flesch reading ease, Gunning fog, LIX, and SMOG, with a rule that names the polysyllables behind them.",
+        "homepage": "https://github.com/vale-cli/readability",
+        "url": "https://github.com/vale-cli/readability/releases/latest/download/Readability.zip",
         "logo": "https://github.com/vale-cli.png",
         "tags": [
             "style"
