@@ -211,6 +211,17 @@
         ]
     },
     {
+        "name": "Voices",
+        "description": "Writing voices as Vale rules: a shared core against hedging, puffery, weasel words, and throat clearing, and voices such as Direct, Simple, and Human that set how the prose should sound.",
+        "homepage": "https://github.com/jdkato/voices",
+        "url": "https://github.com/jdkato/voices/releases/latest/download/Voices.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style",
+            "voice"
+        ]
+    },
+    {
         "name": "ai-tells",
         "description": "Flags the fingerprints of AI-written prose, with rule messages that name the fix rather than only the phrase.",
         "homepage": "https://github.com/tbhb/vale-ai-tells",
