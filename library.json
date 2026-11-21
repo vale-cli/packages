@@ -171,6 +171,16 @@
         ]
     },
     {
+        "name": "Prompts",
+        "description": "Lints instruction files such as AGENTS.md, CLAUDE.md, and SKILL.md: advice in place of commands, vague verbs, contradictions, too much emphasis, and files too long to read on every turn.",
+        "homepage": "https://github.com/jdkato/prompts",
+        "url": "https://github.com/jdkato/prompts/releases/latest/download/Prompts.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style"
+        ]
+    },
+    {
         "name": "Readability",
         "description": "Readability scores: Automated Readability Index, Coleman-Liau, Flesch-Kincaid, Flesch reading ease, Gunning fog, LIX, and SMOG, with a rule that names the polysyllables behind them.",
         "homepage": "https://github.com/vale-cli/readability",
