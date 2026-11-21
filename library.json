@@ -221,6 +221,16 @@
         ]
     },
     {
+        "name": "TechTerms",
+        "description": "A spelling dictionary of 115,000 technical terms, from product and company names to file types and the vocabulary of some 30 programming languages, built from cspell's MIT-licensed word lists. Vale.Spelling uses it beside its own dictionary.",
+        "homepage": "https://github.com/jdkato/techterms",
+        "url": "https://github.com/jdkato/techterms/releases/latest/download/TechTerms.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "config"
+        ]
+    },
+    {
         "name": "Voices",
         "description": "Writing voices as Vale rules: a shared core against hedging, puffery, weasel words, and throat clearing, and voices such as Direct, Simple, and Human that set how the prose should sound.",
         "homepage": "https://github.com/jdkato/voices",
