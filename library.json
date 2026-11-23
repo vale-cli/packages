@@ -12,6 +12,17 @@
         ]
     },
     {
+        "name": "APIDocs",
+        "description": "The prose in OpenAPI documents: operation summaries and descriptions, parameter and property descriptions, and terms, read through a View that ships with the package.",
+        "homepage": "https://github.com/jdkato/apidocs",
+        "url": "https://github.com/jdkato/apidocs/releases/latest/download/APIDocs.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style",
+            "api"
+        ]
+    },
+    {
         "name": "AiTells",
         "description": "Flags the tells of AI-written prose: em-dash habits, epigrams, abstract-noun triads, clichés, and 13 more benchmarked rules.",
         "homepage": "https://github.com/krishnasunkam/vale-ai-tells",
@@ -42,6 +53,17 @@
         "tags": [
             "style",
             "markup"
+        ]
+    },
+    {
+        "name": "Changelog",
+        "description": "Changelogs in the Keep a Changelog format: release headings, ISO dates, the six change types, and vague entries, with an opt-in style for release-note tone.",
+        "homepage": "https://github.com/jdkato/changelog",
+        "url": "https://github.com/jdkato/changelog/releases/latest/download/Changelog.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style",
+            "code"
         ]
     },
     {
@@ -97,6 +119,17 @@
         "tags": [
             "style",
             "creative"
+        ]
+    },
+    {
+        "name": "GlobalEnglish",
+        "description": "English for translation and for readers whose first language isn't English: idioms, phrasal verbs, Latin abbreviations, ambiguous words, and an opt-in style for procedures in controlled English.",
+        "homepage": "https://github.com/jdkato/global-english",
+        "url": "https://github.com/jdkato/global-english/releases/latest/download/GlobalEnglish.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style",
+            "prose"
         ]
     },
     {
@@ -167,6 +200,17 @@
         ]
     },
     {
+        "name": "Microcopy",
+        "description": "UI text: sentence-case labels, specific button verbs, error messages that blame or say nothing, filler, and confirmations, with a View for i18n locale files.",
+        "homepage": "https://github.com/jdkato/microcopy",
+        "url": "https://github.com/jdkato/microcopy/releases/latest/download/Microcopy.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style",
+            "ux"
+        ]
+    },
+    {
         "name": "Microsoft",
         "description": "A Vale-compatible implementation of the Microsoft Writing Style Guide.",
         "homepage": "https://github.com/vale-cli/Microsoft",
@@ -186,6 +230,17 @@
         "tags": [
             "style",
             "markup"
+        ]
+    },
+    {
+        "name": "PlainLanguage",
+        "description": "The US Federal Plain Language Guidelines: simple words, hidden verbs, jargon, \"must\" over \"shall\", double negatives, passive voice, and sentence length.",
+        "homepage": "https://github.com/vale-cli/PlainLanguage",
+        "url": "https://github.com/vale-cli/PlainLanguage/releases/latest/download/PlainLanguage.zip",
+        "logo": "https://github.com/vale-cli.png",
+        "tags": [
+            "style",
+            "prose"
         ]
     },
     {
