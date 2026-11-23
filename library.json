@@ -233,6 +233,18 @@
         ]
     },
     {
+        "name": "OpenSource",
+        "description": "README and CONTRIBUTING files: Standard Readme's sections and order, what a contributing guide owes a newcomer, and welcoming language, from The Good Docs Project and the Open Source Guides.",
+        "homepage": "https://github.com/jdkato/opensource",
+        "url": "https://github.com/jdkato/opensource/releases/latest/download/OpenSource.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style",
+            "docs",
+            "inclusive-language"
+        ]
+    },
+    {
         "name": "PlainLanguage",
         "description": "The US Federal Plain Language Guidelines: simple words, hidden verbs, jargon, \"must\" over \"shall\", double negatives, passive voice, and sentence length.",
         "homepage": "https://github.com/vale-cli/PlainLanguage",
