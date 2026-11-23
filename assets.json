@@ -302,10 +302,10 @@
         ]
     },
     {
-        "name": "Kubernetes",
+        "name": "KubernetesTerms",
         "kind": "vocabulary",
         "description": "Kubernetes resource kinds and ecosystem tools the built-in dictionary doesn't know, such as kubeadm, CSIDriver, and kustomize.",
-        "path": "assets/vocabularies/Kubernetes/accept.txt",
+        "path": "assets/vocabularies/KubernetesTerms/accept.txt",
         "tags": [
             "cloud"
         ]

@@ -189,6 +189,17 @@
         ]
     },
     {
+        "name": "Kubernetes",
+        "description": "The Kubernetes documentation style guide: its word list, API kinds in UpperCamelCase, code style for commands and fields, headings, and the language it asks writers to avoid.",
+        "homepage": "https://github.com/jdkato/kubernetes",
+        "url": "https://github.com/jdkato/kubernetes/releases/latest/download/Kubernetes.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style",
+            "docs"
+        ]
+    },
+    {
         "name": "MDX",
         "description": "Adds support for MDX comments and other non-standard markup.",
         "homepage": "https://github.com/vale-cli/MDX",
@@ -219,6 +230,18 @@
         "tags": [
             "style",
             "docs"
+        ]
+    },
+    {
+        "name": "NHS",
+        "description": "The NHS digital service manual's content style guide: its A to Z of health writing, numbers, dates and times, punctuation, and inclusive language.",
+        "homepage": "https://github.com/jdkato/nhs",
+        "url": "https://github.com/jdkato/nhs/releases/latest/download/NHS.zip",
+        "logo": "https://github.com/jdkato.png",
+        "tags": [
+            "style",
+            "prose",
+            "inclusive-language"
         ]
     },
     {
