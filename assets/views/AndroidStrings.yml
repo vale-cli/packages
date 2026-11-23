@@ -1,0 +1,26 @@
+# Android string resources: the text of each `<string>` and of each `<item>`
+# in a `<plurals>`, one element per line. Names, attributes, and strings
+# marked `translatable="false"` are never linted.
+#
+#   [res/values/strings.xml]
+#   BasedOnStyles = Vale
+#   View = AndroidStrings
+engine: textfsm
+template: |
+  Value String (.*?)
+  Value Plural (.*?)
+
+  Start
+    ^\s*<string\b[^>]*\btranslatable="false" -> Next
+    ^\s*<string\b[^>]*>${String}</string> -> Record
+    ^\s*<plurals\b -> Plurals
+
+  Plurals
+    ^\s*</plurals> -> Start
+    ^\s*<item\b[^>]*>${Plural}</item> -> Record
+scopes:
+  - name: string
+    expr: String
+
+  - name: plural
+    expr: Plural

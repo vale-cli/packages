@@ -1,0 +1,10 @@
+# An i18n JSON file: every string value, at any depth, flat keys or nested.
+# The keys are never linted.
+#
+#   [locales/en.json]
+#   BasedOnStyles = Vale
+#   View = I18nJSON
+engine: dasel
+scopes:
+  - name: message
+    expr: search(true)

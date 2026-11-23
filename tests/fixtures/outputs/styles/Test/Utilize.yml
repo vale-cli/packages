@@ -1,0 +1,5 @@
+extends: existence
+message: "Use 'use' instead of '%s'."
+level: warning
+tokens:
+  - utilize

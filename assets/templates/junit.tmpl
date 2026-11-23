@@ -1,0 +1,28 @@
+{{- /* JUnit XML: a test suite per file and a test case per alert. Errors and
+       warnings are failures; suggestions pass, so they are listed but never
+       fail the build. */ -}}
+{{- $tests := 0 -}}{{- $failures := 0 -}}
+{{- range .Files -}}
+{{- range .Alerts -}}
+{{- $tests = add1 $tests -}}
+{{- if ne .Severity "suggestion" -}}{{- $failures = add1 $failures -}}{{- end -}}
+{{- end -}}
+{{- end -}}
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Vale" tests="{{ $tests }}" failures="{{ $failures }}">
+{{- range .Files -}}
+{{- $path := .Path -}}
+{{- $n := 0 -}}
+{{- range .Alerts -}}{{- if ne .Severity "suggestion" -}}{{- $n = add1 $n -}}{{- end -}}{{- end }}
+  <testsuite name="{{ $path | html }}" tests="{{ len .Alerts }}" failures="{{ $n }}">
+{{- range .Alerts }}
+    <testcase name="{{ .Check | html }}" classname="{{ $path | html }}:{{ .Line }}:{{ index .Span 0 }}">
+{{- if ne .Severity "suggestion" }}
+      <failure type="{{ .Severity }}" message="{{ .Message | html }}">{{ $path | html }}:{{ .Line }}:{{ index .Span 0 }}: {{ .Message | html }}</failure>
+    </testcase>
+{{- else }}</testcase>
+{{- end -}}
+{{- end }}
+  </testsuite>
+{{- end }}
+</testsuites>

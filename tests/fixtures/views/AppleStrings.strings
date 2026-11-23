@@ -1,0 +1,6 @@
+/* The the greeting on teh home screen. */
+"the the" = "Welcome to the the app.";
+
+// Recieve is a key, not a message.
+"recieve_title" = "Recieve notifications";
+"quote" = "Say \"hello\" to teh team.";

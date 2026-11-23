@@ -1,0 +1,16 @@
+botocore
+Bottlerocket
+Braket
+Corretto
+Firehose
+FSx
+Greengrass
+Inferentia
+Lightsail
+Macie
+Powertools
+Rekognition
+Textract
+Timestream
+Trainium
+Wickr

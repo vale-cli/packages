@@ -1,0 +1,33 @@
+# Every heading, so a case shows what the action makes of it.
+extends: existence
+message: "'%s' in title case is '%s'."
+level: suggestion
+scope: heading
+nonword: true
+action:
+  name: suggest
+  params:
+    - TitleCase.tengo
+raw:
+  - '^.+$'
+tests:
+  - name: capitalizes each word
+    input: |
+      # getting started with the editor
+    want: |
+      1:3:Assets.TitleCase:'getting started with the editor' in title case is 'Getting Started with the Editor'.
+  - name: keeps names and acronyms
+    input: |
+      # using the API in a JavaScript app
+    want: |
+      1:3:Assets.TitleCase:'using the API in a JavaScript app' in title case is 'Using the API in a JavaScript App'.
+  - name: a small word at the end and hyphenated words
+    input: |
+      # a built-in tool to rely on
+    want: |
+      1:3:Assets.TitleCase:'a built-in tool to rely on' in title case is 'A Built-In Tool to Rely On'.
+  - name: leaves title case alone
+    input: |
+      # Getting Started with the Editor
+    want: |
+      1:3:Assets.TitleCase:'Getting Started with the Editor' in title case is 'Getting Started with the Editor'.

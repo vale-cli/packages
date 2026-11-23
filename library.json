@@ -6,7 +6,9 @@
         "url": "https://github.com/jdkato/a11y/releases/latest/download/A11y.zip",
         "logo": "https://github.com/jdkato.png",
         "tags": [
-            "style"
+            "style",
+            "accessibility",
+            "inclusive-language"
         ]
     },
     {
@@ -16,7 +18,8 @@
         "url": "https://github.com/krishnasunkam/vale-ai-tells/releases/latest/download/AiTells.zip",
         "logo": "https://github.com/krishnasunkam.png",
         "tags": [
-            "style"
+            "style",
+            "ai"
         ]
     },
     {
@@ -26,7 +29,8 @@
         "url": "https://github.com/redhat-documentation/vale-at-red-hat/releases/latest/download/AsciiDoc.zip",
         "logo": "https://github.com/redhat-documentation.png",
         "tags": [
-            "style"
+            "style",
+            "markup"
         ]
     },
     {
@@ -36,7 +40,8 @@
         "url": "https://github.com/jhradilek/asciidoctor-dita-vale/releases/latest/download/AsciiDocDITA.zip",
         "logo": "https://github.com/redhat-documentation.png",
         "tags": [
-            "style"
+            "style",
+            "markup"
         ]
     },
     {
@@ -46,7 +51,8 @@
         "url": "https://github.com/jdkato/comments/releases/latest/download/Comments.zip",
         "logo": "https://github.com/jdkato.png",
         "tags": [
-            "style"
+            "style",
+            "code"
         ]
     },
     {
@@ -56,7 +62,8 @@
         "url": "https://github.com/jdkato/commits/releases/latest/download/Commits.zip",
         "logo": "https://github.com/jdkato.png",
         "tags": [
-            "style"
+            "style",
+            "code"
         ]
     },
     {
@@ -66,7 +73,8 @@
         "url": "https://github.com/jdkato/diataxis/releases/latest/download/Diataxis.zip",
         "logo": "https://github.com/jdkato.png",
         "tags": [
-            "style"
+            "style",
+            "docs"
         ]
     },
     {
@@ -76,7 +84,8 @@
         "url": "https://github.com/elastic/vale-rules/releases/latest/download/elastic-vale.zip",
         "logo": "https://github.com/elastic.png",
         "tags": [
-            "style"
+            "style",
+            "docs"
         ]
     },
     {
@@ -86,7 +95,8 @@
         "url": "https://github.com/jdkato/fiction/releases/latest/download/Fiction.zip",
         "logo": "https://github.com/jdkato.png",
         "tags": [
-            "style"
+            "style",
+            "creative"
         ]
     },
     {
@@ -96,7 +106,8 @@
         "url": "https://github.com/vale-cli/Google/releases/latest/download/Google.zip",
         "logo": "https://github.com/google.png",
         "tags": [
-            "style"
+            "style",
+            "docs"
         ]
     },
     {
@@ -107,7 +118,7 @@
         "logo": "https://writewithharper.com/apple-touch-icon.png",
         "tags": [
             "style",
-            "grammar"
+            "prose"
         ]
     },
     {
@@ -117,7 +128,8 @@
         "url": "https://github.com/vale-cli/Hugo/releases/latest/download/Hugo.zip",
         "logo": "https://github.com/gohugoio.png",
         "tags": [
-            "config"
+            "config",
+            "markup"
         ]
     },
     {
@@ -127,7 +139,9 @@
         "url": "https://github.com/vale-cli/Joblint/releases/latest/download/Joblint.zip",
         "logo": "https://github.com/npm.png",
         "tags": [
-            "style"
+            "style",
+            "hiring",
+            "inclusive-language"
         ]
     },
     {
@@ -137,7 +151,8 @@
         "url": "https://github.com/jdkato/journals/releases/latest/download/Journals.zip",
         "logo": "https://github.com/jdkato.png",
         "tags": [
-            "style"
+            "style",
+            "research"
         ]
     },
     {
@@ -147,7 +162,8 @@
         "url": "https://github.com/vale-cli/MDX/releases/latest/download/MDX.zip",
         "logo": "https://github.com/mdx-js.png",
         "tags": [
-            "config"
+            "config",
+            "markup"
         ]
     },
     {
@@ -157,7 +173,8 @@
         "url": "https://github.com/vale-cli/Microsoft/releases/latest/download/Microsoft.zip",
         "logo": "https://github.com/microsoft.png",
         "tags": [
-            "style"
+            "style",
+            "docs"
         ]
     },
     {
@@ -167,7 +184,8 @@
         "url": "https://github.com/redhat-documentation/vale-at-red-hat/releases/latest/download/OpenShiftAsciiDoc.zip",
         "logo": "https://github.com/redhat-documentation.png",
         "tags": [
-            "style"
+            "style",
+            "markup"
         ]
     },
     {
@@ -177,7 +195,8 @@
         "url": "https://github.com/jdkato/prompts/releases/latest/download/Prompts.zip",
         "logo": "https://github.com/jdkato.png",
         "tags": [
-            "style"
+            "style",
+            "ai"
         ]
     },
     {
@@ -187,7 +206,8 @@
         "url": "https://github.com/vale-cli/readability/releases/latest/download/Readability.zip",
         "logo": "https://github.com/vale-cli.png",
         "tags": [
-            "style"
+            "style",
+            "prose"
         ]
     },
     {
@@ -197,7 +217,8 @@
         "url": "https://github.com/redhat-documentation/vale-at-red-hat/releases/latest/download/RedHat.zip",
         "logo": "https://github.com/redhat-documentation.png",
         "tags": [
-            "style"
+            "style",
+            "docs"
         ]
     },
     {
@@ -207,7 +228,8 @@
         "url": "https://github.com/sfadriaan/Salesforce/releases/latest/download/Salesforce.zip",
         "logo": "https://github.com/salesforce.png",
         "tags": [
-            "style"
+            "style",
+            "docs"
         ]
     },
     {
@@ -217,7 +239,8 @@
         "url": "https://github.com/vale-cli/Std/releases/latest/download/Std.zip",
         "logo": "https://github.com/vale-cli.png",
         "tags": [
-            "style"
+            "style",
+            "prose"
         ]
     },
     {
@@ -227,7 +250,8 @@
         "url": "https://github.com/jdkato/techterms/releases/latest/download/TechTerms.zip",
         "logo": "https://github.com/jdkato.png",
         "tags": [
-            "config"
+            "config",
+            "spelling"
         ]
     },
     {
@@ -238,7 +262,8 @@
         "logo": "https://github.com/jdkato.png",
         "tags": [
             "style",
-            "voice"
+            "ai",
+            "prose"
         ]
     },
     {
@@ -248,7 +273,8 @@
         "url": "https://github.com/tbhb/vale-ai-tells/releases/latest/download/ai-tells.zip",
         "logo": "https://github.com/tbhb.png",
         "tags": [
-            "style"
+            "style",
+            "ai"
         ]
     },
     {
@@ -258,7 +284,8 @@
         "url": "https://github.com/vale-cli/alex/releases/latest/download/alex.zip",
         "logo": "https://github.com/get-alex.png",
         "tags": [
-            "style"
+            "style",
+            "inclusive-language"
         ]
     },
     {
@@ -269,6 +296,7 @@
         "logo": "https://github.com/a11yfred.png",
         "tags": [
             "style",
+            "accessibility",
             "inclusive-language"
         ]
     },
@@ -279,7 +307,8 @@
         "url": "https://github.com/vale-cli/proselint/releases/latest/download/proselint.zip",
         "logo": "https://github.com/amperser.png",
         "tags": [
-            "style"
+            "style",
+            "prose"
         ]
     },
     {
@@ -289,7 +318,8 @@
         "url": "https://github.com/vale-cli/write-good/releases/latest/download/write-good.zip",
         "logo": "https://github.com/npm.png",
         "tags": [
-            "style"
+            "style",
+            "prose"
         ]
     }
 ]

@@ -1,0 +1,5 @@
+extends: existence
+message: "Consider removing '%s'."
+level: suggestion
+tokens:
+  - should

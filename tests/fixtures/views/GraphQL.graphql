@@ -1,0 +1,18 @@
+# the the comment with teh typo
+
+"""
+A widget with the the parts.
+"""
+type Widget {
+  "The widget's name, recieved from the server."
+  name(format: String = "the the"): String
+
+  """Inline teh description."""
+  size: Int
+
+  """
+  First line is fine.
+  Second line is mispelled.
+  """
+  recieve: Boolean
+}

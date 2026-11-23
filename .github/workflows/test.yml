@@ -19,6 +19,18 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # The asset tests run each view, template, and script through Vale and
+      # skip without it.
+      - name: Install Vale
+        env:
+          VALE_VERSION: 3.28.1
+        run: |
+          curl -sL --fail -o vale.tar.gz \
+            "https://github.com/vale-cli/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz"
+          mkdir -p "$RUNNER_TEMP/bin"
+          tar xzf vale.tar.gz -C "$RUNNER_TEMP/bin" vale
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+
       # tests/__init__.py opens library.json relative to the working directory,
       # so this has to run from the repository root.
       - run: pytest -v

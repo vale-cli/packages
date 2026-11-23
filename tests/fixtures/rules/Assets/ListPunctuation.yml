@@ -1,0 +1,62 @@
+extends: script
+message: "End every item in this list with a period, or none of them."
+level: suggestion
+scope: raw
+script: ListPunctuation.tengo
+tests:
+  - name: every item ends with a period
+    input: |
+      - The first item.
+      - The second item.
+    want: ''
+  - name: no item ends with a period
+    input: |
+      - First
+      - Second
+      - Third
+    want: ''
+  - name: one item without a period
+    input: |
+      - The first item.
+      - The second item
+      - The third item.
+    want: |
+      2:3:Assets.ListPunctuation:End every item in this list with a period, or none of them.
+  - name: one item with a period
+    input: |
+      1. Install it
+      2. Configure it.
+      3. Run it
+    want: |
+      2:4:Assets.ListPunctuation:End every item in this list with a period, or none of them.
+  - name: a nested list is its own list
+    input: |
+      - Options:
+        - fast
+        - slow
+      - The last item.
+    want: ''
+  - name: a wrapped item ends on its last line
+    input: |
+      - The first item,
+        which wraps.
+      - The second item
+    want: |
+      3:3:Assets.ListPunctuation:End every item in this list with a period, or none of them.
+  - name: separate lists are judged separately
+    input: |
+      - One.
+      - Two.
+
+      Some text.
+
+      - Three
+      - Four
+    want: ''
+  - name: code is skipped
+    input: |
+      ```
+      - one.
+      - two
+      ```
+    want: ''

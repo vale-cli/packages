@@ -1,0 +1,10 @@
+# A Rails-style locale file, `en:` at the root and nested keys under it:
+# every string value, at any depth. The keys are never linted.
+#
+#   [config/locales/en.yml]
+#   BasedOnStyles = Vale
+#   View = I18nYAML
+engine: dasel
+scopes:
+  - name: message
+    expr: search(true)

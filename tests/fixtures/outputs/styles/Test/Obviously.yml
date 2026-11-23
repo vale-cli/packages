@@ -1,0 +1,7 @@
+extends: existence
+message: "Don't write \"%s\" <here> & there."
+level: error
+link: https://vale.sh/docs?a=1&b=2
+ignorecase: true
+tokens:
+  - obviously

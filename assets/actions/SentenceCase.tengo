@@ -1,0 +1,30 @@
+// The match in sentence case: the first word capitalized and the rest
+// lowercased. A word with a capital past its first letter ("JavaScript",
+// "API") is kept as written, and so is "I". The first word after a colon is
+// capitalized too.
+text := import("text")
+
+words := text.split(match, " ")
+out := []
+first := true
+for w in words {
+    if w == "" {
+        out = append(out, w)
+        continue
+    }
+    if first {
+        found := text.re_find(`^(\PL*)(\pL)(.*)$`, w)
+        if found != undefined {
+            w = found[0][1].text + text.to_upper(found[0][2].text) + found[0][3].text
+        }
+        first = false
+    } else if !text.re_match(`^\PL*\pL.*\p{Lu}|^\PL*I(\PL.*)?$`, w) {
+        w = text.to_lower(w)
+    }
+    if text.has_suffix(w, ":") {
+        first = true
+    }
+    out = append(out, w)
+}
+
+suggestions := [text.join(out, " ")]

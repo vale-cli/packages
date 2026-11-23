@@ -1,0 +1,69 @@
+extends: script
+message: "Heading number '%s' is out of sequence."
+level: warning
+scope: raw
+script: HeadingNumbers.tengo
+tests:
+  - name: a numbered outline in order
+    input: |
+      # 1. Introduction
+
+      ## 1.1 Background
+
+      ## 1.2 Scope
+
+      # 2. Design
+
+      ## 2.1 Overview
+    want: ''
+  - name: a skipped number
+    input: |
+      # 1. Introduction
+
+      # 3. Design
+    want: |
+      3:3:Assets.HeadingNumbers:Heading number '3' is out of sequence; expected '2'.
+  - name: a repeated number
+    input: |
+      # 1. Introduction
+
+      ## 1.1 Background
+
+      ## 1.1 Scope
+    want: |
+      5:4:Assets.HeadingNumbers:Heading number '1.1' is out of sequence; expected '1.2'.
+  - name: a skipped level
+    input: |
+      # 1. Introduction
+
+      ### 1.1.1 Detail
+    want: |
+      3:5:Assets.HeadingNumbers:Heading number '1.1.1' is out of sequence; expected '1.1'.
+  - name: a subsection restarts under a new section
+    input: |
+      # 1. One
+
+      ## 1.1 A
+
+      ## 1.2 B
+
+      # 2. Two
+
+      ## 2.1 A
+    want: ''
+  - name: counting from zero
+    input: |
+      # 0. Preface
+
+      # 1. Introduction
+    want: ''
+  - name: code and years are not numbers
+    input: |
+      # 2024 roadmap
+
+      ```
+      # 7. not a heading
+      ```
+
+      # 1. Introduction
+    want: ''

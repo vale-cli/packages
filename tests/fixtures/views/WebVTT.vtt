@@ -1,0 +1,19 @@
+WEBVTT - the the captions
+
+NOTE This note has teh typo
+and the the repeat.
+
+STYLE
+::cue { color: recieve; }
+
+intro-the-the
+00:00:01.000 --> 00:00:03.000 align:start
+Welcome to the the show.
+
+2
+00:01:04.000 --> 00:01:06.000
+This cue has a
+mispelled word.
+
+00:00:07.000 --> 00:00:09.000
+Recieve the last cue.

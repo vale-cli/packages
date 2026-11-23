@@ -1,0 +1,105 @@
+// A list whose items mix ending punctuation: some end with a period and some
+// don't. Use with `scope: raw` on Markdown. The items in the minority are
+// flagged; an item ending with a colon introduces what follows and is skipped.
+text := import("text")
+
+matches := []
+
+open := []     // the lists being read, innermost last
+fenced := ""   // the open code fence, if any
+offset := 0
+
+// Flag the items that disagree with the rest of their list.
+check := func(items) {
+    ended := []
+    bare := []
+    for item in items {
+        if text.has_suffix(item.text, ":") {
+            continue
+        } else if text.re_match(`[.!?]["')\]*_]*$`, item.text) {
+            ended = append(ended, item)
+        } else {
+            bare = append(bare, item)
+        }
+    }
+    if len(ended) == 0 || len(bare) == 0 {
+        return
+    }
+    flag := bare
+    if len(bare) > len(ended) {
+        flag = ended
+    }
+    for item in flag {
+        matches = append(matches, {begin: item.begin, end: item.end})
+    }
+}
+
+closeTo := func(indent) {
+    for len(open) > 0 && open[len(open) - 1].indent > indent {
+        check(open[len(open) - 1].items)
+        open = open[:len(open) - 1]
+    }
+}
+
+for line in text.split(scope, "\n") {
+    start := offset
+    offset += len(line) + 1
+    line = text.trim_right(line, "\r")
+
+    fence := text.re_find(`^([ \t]*)(` + "```" + `|~~~)`, line)
+    if fenced != "" {
+        if fence != undefined && fence[0][2].text == fenced {
+            fenced = ""
+        }
+        continue
+    } else if fence != undefined {
+        fenced = fence[0][2].text
+        if fence[0][1].text == "" {
+            closeTo(-1)
+        }
+        continue
+    }
+
+    if text.trim_space(line) == "" {
+        continue
+    }
+
+    // A thematic break, "* * *", is not an item.
+    if text.re_match(`^ {0,3}([-*_])([ \t]*([-*_])){2,}[ \t]*$`, line) {
+        closeTo(-1)
+        continue
+    }
+
+    item := text.re_find(`^([ \t]*)(?:[-*+]|\d{1,9}[.)])[ \t]+(.+?)[ \t]*$`, line)
+    if item != undefined {
+        indent := len(item[0][1].text)
+        closeTo(indent)
+        entry := {
+            text: item[0][2].text,
+            begin: start + item[0][2].begin,
+            end: start + item[0][2].end
+        }
+        if len(open) > 0 && open[len(open) - 1].indent == indent {
+            last := open[len(open) - 1]
+            last.items = append(last.items, entry)
+        } else {
+            open = append(open, {indent: indent, items: [entry]})
+        }
+        continue
+    }
+
+    lead := len(text.re_find(`^[ \t]*`, line)[0][0].text)
+    if len(open) == 0 || lead == 0 {
+        // A paragraph, heading, or table ends every open list.
+        closeTo(-1)
+        continue
+    }
+
+    // A wrapped line: the item now ends where this line does.
+    body := text.trim_space(line)
+    last := open[len(open) - 1].items[len(open[len(open) - 1].items) - 1]
+    last.text = body
+    last.begin = start + lead
+    last.end = start + len(text.trim_right(line, " \t"))
+}
+closeTo(-1)

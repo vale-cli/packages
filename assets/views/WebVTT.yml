@@ -1,0 +1,33 @@
+# WebVTT captions: a header, then cues separated by blank lines, each an
+# optional identifier, a timing line, and the text. Only the text is
+# exposed; NOTE, STYLE, and REGION blocks are skipped.
+#
+#   [*.vtt]
+#   BasedOnStyles = Vale
+#   View = WebVTT
+engine: textfsm
+template: |
+  Value Timing ((?:\d+:)?\d\d:\d\d\.\d\d\d --> .*)
+  Value List Cue (.+)
+
+  Start
+    ^WEBVTT -> Header
+
+  Header
+    ^$ -> Block
+
+  Block
+    ^$ -> Next
+    ^(?:NOTE|STYLE|REGION)(?:\s|$) -> Skip
+    ^${Timing}$ -> Cue
+    ^.+ -> Next
+
+  Skip
+    ^$ -> Block
+
+  Cue
+    ^$ -> Record Block
+    ^${Cue}
+scopes:
+  - name: cue
+    expr: Cue

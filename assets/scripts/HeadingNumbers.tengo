@@ -1,0 +1,72 @@
+// Numbered headings ("1.", "1.2") that skip or repeat a number. Use with
+// `scope: raw` on Markdown, since the check needs every heading at once.
+text := import("text")
+
+matches := []
+
+prev := []     // the last number seen, as a list of ints
+fenced := ""   // the open code fence, if any
+offset := 0
+
+for line in text.split(scope, "\n") {
+    start := offset
+    offset += len(line) + 1
+
+    fence := text.re_find(`^ {0,3}(` + "```" + `|~~~)`, line)
+    if fenced != "" {
+        if fence != undefined && fence[0][1].text == fenced {
+            fenced = ""
+        }
+        continue
+    } else if fence != undefined {
+        fenced = fence[0][1].text
+        continue
+    }
+
+    found := text.re_find(`^ {0,3}#{1,6}[ \t]+(\d+(?:\.\d+)*)(\.?)(?:[ \t]|$)`, line)
+    if found == undefined {
+        continue
+    }
+
+    // "1." or "1.2", but not a bare "2024".
+    written := found[0][1]
+    if !text.contains(written.text, ".") && found[0][2].text == "" {
+        continue
+    }
+
+    parts := []
+    for p in text.split(written.text, ".") {
+        parts = append(parts, int(p))
+    }
+
+    want := []
+    k := len(parts)
+    if k <= len(prev) {
+        for i := 0; i < k - 1; i++ {
+            want = append(want, prev[i])
+        }
+        want = append(want, prev[k - 1] + 1)
+    } else {
+        // One level down; deeper than that skips a level.
+        want = append(copy(prev), 1)
+    }
+
+    // A document may count from zero.
+    if len(prev) == 0 && k == 1 && parts[0] == 0 {
+        want = [0]
+    }
+
+    labels := []
+    for n in want {
+        labels = append(labels, string(n))
+    }
+    expected := text.join(labels, ".")
+    if written.text != expected {
+        matches = append(matches, {
+            begin: start + written.begin,
+            end: start + written.end,
+            message: "Heading number '%s' is out of sequence; expected '" + expected + "'."
+        })
+    }
+    prev = parts
+}

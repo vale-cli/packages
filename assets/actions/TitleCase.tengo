@@ -1,0 +1,47 @@
+// The match in title case: every word capitalized except articles, short
+// conjunctions, and short prepositions in the middle. A word with a capital
+// past its first letter ("JavaScript", "API") is kept as written.
+text := import("text")
+
+small := {
+    "a": true, "an": true, "and": true, "as": true, "at": true, "but": true, "by": true,
+    "for": true, "if": true, "in": true, "nor": true, "of": true, "on": true, "or": true,
+    "per": true, "so": true, "the": true, "to": true, "up": true, "via": true, "vs": true,
+    "yet": true, "from": true, "into": true, "onto": true, "with": true
+}
+
+// The first letter of a word, after any leading punctuation, in upper case.
+upper := func(w) {
+    found := text.re_find(`^(\PL*)(\pL)(.*)$`, w)
+    if found == undefined {
+        return w
+    }
+    return found[0][1].text + text.to_upper(found[0][2].text) + found[0][3].text
+}
+
+words := text.split(match, " ")
+last := len(words) - 1
+for last > 0 && words[last] == "" {
+    last--
+}
+
+out := []
+for i, w in words {
+    if w == "" || text.re_match(`^\PL*\pL.*\p{Lu}`, w) {
+        out = append(out, w)
+        continue
+    }
+    bare := text.to_lower(text.re_replace(`^\PL+|\PL+$`, w, ""))
+    if i > 0 && i < last && small[bare] && !text.has_suffix(out[i - 1], ":") {
+        out = append(out, text.to_lower(w))
+        continue
+    }
+    // Each part of a hyphenated word: "Built-In".
+    parts := []
+    for p in text.split(w, "-") {
+        parts = append(parts, upper(p))
+    }
+    out = append(out, text.join(parts, "-"))
+}
+
+suggestions := [text.join(out, " ")]

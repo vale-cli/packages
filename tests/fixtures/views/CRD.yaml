@@ -1,0 +1,33 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: widgets.example.com
+  annotations:
+    summary: "the the annotation"
+spec:
+  group: example.com
+  names:
+    kind: Recieve
+  versions:
+    - name: v1
+      served: true
+      schema:
+        openAPIV3Schema:
+          description: Widget is the the top-level object.
+          type: object
+          properties:
+            spec:
+              description: |-
+                Spec holds the desired state.
+                It has a mispelled word.
+              type: object
+              properties:
+                description:
+                  type: string
+                  description: A field named description, which we recieve.
+    - name: v2
+      served: true
+      schema:
+        openAPIV3Schema:
+          description: The second version, teh newer one.
+          type: object

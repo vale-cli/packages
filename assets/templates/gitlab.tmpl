@@ -1,0 +1,19 @@
+{{- /* GitLab Code Quality: a JSON array of issues, one per alert. The
+       fingerprint hashes the path, position, rule, and match, so an alert
+       keeps it from run to run until its text moves, and two matches on one
+       line stay two issues. */ -}}
+[
+{{- $first := true -}}
+{{- range .Files -}}
+{{- $path := .Path -}}
+{{- range .Alerts -}}
+{{- $severity := "info" -}}
+{{- if eq .Severity "error" -}}{{- $severity = "major" -}}
+{{- else if eq .Severity "warning" -}}{{- $severity = "minor" -}}
+{{- end -}}
+{{- if not $first }},{{ end }}
+  {{ dict "description" .Message "check_name" .Check "fingerprint" (printf "%s:%d:%d:%s:%s" $path .Line (index .Span 0) .Check .Match | sha256sum) "severity" $severity "location" (dict "path" $path "lines" (dict "begin" .Line)) | toJson }}
+{{- $first = false -}}
+{{- end -}}
+{{- end }}
+]

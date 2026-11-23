@@ -1,0 +1,8 @@
+en:
+  the the: Welcome back.
+  greeting: "Welcome to the the app."
+  recieve: Inbox
+  nav:
+    settings:
+      teh_title: Recieve notifications
+  count: 3

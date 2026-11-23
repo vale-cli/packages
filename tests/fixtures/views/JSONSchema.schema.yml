@@ -1,0 +1,12 @@
+$id: https://example.com/the-the.schema.json
+title: A widget with teh parts
+description: Describes the the widget.
+type: object
+properties:
+  title:
+    type: string
+    description: The widget's name, recieved from the server.
+    default: the the default
+  recieve_count:
+    title: Recieve count
+    type: integer

@@ -1,0 +1,24 @@
+# A GraphQL schema: the descriptions before its types, fields, and
+# arguments, block (`"""`) or single-line (`"`), read as Markdown.
+#
+#   [*.{graphql,graphqls}]
+#   BasedOnStyles = Vale
+#   View = GraphQL
+engine: textfsm
+template: |
+  Value List Description (.*)
+
+  Start
+    ^\s*"""${Description}"""\s*$
+    ^\s*"""\s*$ -> Block
+    ^\s*"""${Description}$ -> Block
+    ^\s*"${Description}"\s*$
+
+  Block
+    ^\s*"""\s*$ -> Start
+    ^\s*${Description}"""\s*$ -> Start
+    ^\s*${Description}
+scopes:
+  - name: description
+    expr: Description
+    type: md

@@ -1,0 +1,11 @@
+{
+  "the the": "Welcome back.",
+  "greeting": "Welcome to the the app.",
+  "nav.recieve": "Inbox",
+  "nav": {
+    "settings": {
+      "teh_title": "Recieve notifications"
+    }
+  },
+  "days": ["Mondey", "Tuesday"]
+}

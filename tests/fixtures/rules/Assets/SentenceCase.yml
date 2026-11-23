@@ -1,0 +1,33 @@
+# Every heading, so a case shows what the action makes of it.
+extends: existence
+message: "'%s' in sentence case is '%s'."
+level: suggestion
+scope: heading
+nonword: true
+action:
+  name: suggest
+  params:
+    - SentenceCase.tengo
+raw:
+  - '^.+$'
+tests:
+  - name: lowercases the rest
+    input: |
+      # Getting Started With The Editor
+    want: |
+      1:3:Assets.SentenceCase:'Getting Started With The Editor' in sentence case is 'Getting started with the editor'.
+  - name: keeps names and acronyms
+    input: |
+      # Using The API With JavaScript
+    want: |
+      1:3:Assets.SentenceCase:'Using The API With JavaScript' in sentence case is 'Using the API with JavaScript'.
+  - name: capitalizes after a colon
+    input: |
+      # Setup: Install The Tool
+    want: |
+      1:3:Assets.SentenceCase:'Setup: Install The Tool' in sentence case is 'Setup: Install the tool'.
+  - name: leaves sentence case alone
+    input: |
+      # I tried it with npm and macOS
+    want: |
+      1:3:Assets.SentenceCase:'I tried it with npm and macOS' in sentence case is 'I tried it with npm and macOS'.

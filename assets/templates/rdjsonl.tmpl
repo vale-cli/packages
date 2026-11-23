@@ -1,0 +1,14 @@
+{{- /* reviewdog rdjsonl: one diagnostic per line, for `reviewdog -f=rdjsonl`.
+       The end column is one past the span, since reviewdog's range is
+       exclusive. reviewdog counts columns in bytes and Vale in characters, so
+       they differ after a line's first multi-byte character. */ -}}
+{{- range .Files -}}
+{{- $path := .Path -}}
+{{- range .Alerts -}}
+{{- $severity := "INFO" -}}
+{{- if eq .Severity "error" -}}{{- $severity = "ERROR" -}}
+{{- else if eq .Severity "warning" -}}{{- $severity = "WARNING" -}}
+{{- end -}}
+{"message": "{{ .Message | jsonEscape }}", "location": {"path": "{{ $path | jsonEscape }}", "range": {"start": {"line": {{ .Line }}, "column": {{ index .Span 0 }}}, "end": {"line": {{ .Line }}, "column": {{ add (index .Span 1) 1 }}}}}, "severity": "{{ $severity }}", "source": {"name": "vale"}, "code": {"value": "{{ .Check | jsonEscape }}"{{ if .Link }}, "url": "{{ .Link | jsonEscape }}"{{ end }}}}
+{{ end -}}
+{{- end -}}

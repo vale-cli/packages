@@ -1,0 +1,15 @@
+# An Apple `.strings` file: the value of each `"key" = "value";` line. The
+# keys and comments are never linted.
+#
+#   [*.strings]
+#   BasedOnStyles = Vale
+#   View = AppleStrings
+engine: textfsm
+template: |
+  Value Message ((?:[^"\\]|\\.)*)
+
+  Start
+    ^\s*"(?:[^"\\]|\\.)*"\s*=\s*"${Message}"\s*; -> Record
+scopes:
+  - name: message
+    expr: Message

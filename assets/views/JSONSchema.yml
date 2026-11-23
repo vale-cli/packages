@@ -1,0 +1,13 @@
+# A JSON Schema, in JSON or YAML: every `title` and `description`, at any
+# depth. A property that happens to be named `title` is left alone.
+#
+#   [*.schema.{json,yml,yaml}]
+#   BasedOnStyles = Vale
+#   View = JSONSchema
+engine: dasel
+scopes:
+  - name: title
+    expr: '[$this].search(has("title")).map(title)'
+
+  - name: description
+    expr: '[$this].search(has("description")).map(description)'

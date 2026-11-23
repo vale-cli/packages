@@ -1,5 +1,23 @@
 [
     {
+        "name": "SentenceCase",
+        "kind": "action",
+        "description": "The heading rewritten in sentence case, keeping words like API and JavaScript as written, for a rule's suggest action.",
+        "path": "assets/actions/SentenceCase.tengo",
+        "tags": [
+            "headings"
+        ]
+    },
+    {
+        "name": "TitleCase",
+        "kind": "action",
+        "description": "The heading rewritten in title case, with short articles, conjunctions, and prepositions left lowercase, for a rule's suggest action.",
+        "path": "assets/actions/TitleCase.tengo",
+        "tags": [
+            "headings"
+        ]
+    },
+    {
         "name": "errors",
         "kind": "filter",
         "description": "Only error-level rules, for a hook or a CI step that should block on nothing else.",
@@ -16,6 +34,42 @@
         "tags": []
     },
     {
+        "name": "no-suggestions",
+        "kind": "filter",
+        "description": "Errors and warnings only, for a CI step that should report what needs fixing and leave the rest to the editor.",
+        "path": "assets/filters/no-suggestions.expr",
+        "tags": [
+            "ci"
+        ]
+    },
+    {
+        "name": "spelling",
+        "kind": "filter",
+        "description": "Only the spell checkers, for building a vocabulary from what a first run flags.",
+        "path": "assets/filters/spelling.expr",
+        "tags": []
+    },
+    {
+        "name": "HeadingNumbers",
+        "kind": "script",
+        "description": "Numbered headings, such as 1. and 1.2, that skip or repeat a number, for a script rule scoped to raw Markdown.",
+        "path": "assets/scripts/HeadingNumbers.tengo",
+        "tags": [
+            "headings",
+            "markdown"
+        ]
+    },
+    {
+        "name": "ListPunctuation",
+        "kind": "script",
+        "description": "A list where some items end with a period and others don't, for a script rule scoped to raw Markdown.",
+        "path": "assets/scripts/ListPunctuation.tengo",
+        "tags": [
+            "lists",
+            "markdown"
+        ]
+    },
+    {
         "name": "github",
         "kind": "template",
         "description": "GitHub Actions annotations, one per alert, so each shows on its line in the pull request.",
@@ -23,6 +77,16 @@
         "tags": [
             "ci",
             "github"
+        ]
+    },
+    {
+        "name": "gitlab",
+        "kind": "template",
+        "description": "A GitLab Code Quality report, so alerts show in the merge request widget and the changes view.",
+        "path": "assets/templates/gitlab.tmpl",
+        "tags": [
+            "ci",
+            "gitlab"
         ]
     },
     {
@@ -36,6 +100,35 @@
         ]
     },
     {
+        "name": "junit",
+        "kind": "template",
+        "description": "JUnit XML, a test case per alert, for a CI system that shows test reports but nothing else.",
+        "path": "assets/templates/junit.tmpl",
+        "tags": [
+            "ci"
+        ]
+    },
+    {
+        "name": "rdjsonl",
+        "kind": "template",
+        "description": "reviewdog's rdjsonl, one diagnostic per line, for reviewdog to post as review comments.",
+        "path": "assets/templates/rdjsonl.tmpl",
+        "tags": [
+            "ci",
+            "reviewdog"
+        ]
+    },
+    {
+        "name": "sarif",
+        "kind": "template",
+        "description": "SARIF 2.1.0, for code scanning, where each alert keeps a history and can be dismissed with a reason.",
+        "path": "assets/templates/sarif.tmpl",
+        "tags": [
+            "ci",
+            "github"
+        ]
+    },
+    {
         "name": "summary",
         "kind": "template",
         "description": "A Markdown summary with a table per file and the totals, for a pull request comment or a job summary.",
@@ -43,6 +136,42 @@
         "tags": [
             "ci",
             "github"
+        ]
+    },
+    {
+        "name": "AndroidStrings",
+        "kind": "view",
+        "description": "The text of each string and plural in an Android resource file, with names and untranslatable strings left alone.",
+        "path": "assets/views/AndroidStrings.yml",
+        "section": "res/values/strings.xml",
+        "requires": ">=3.21.0",
+        "tags": [
+            "textfsm",
+            "i18n"
+        ]
+    },
+    {
+        "name": "AppleStrings",
+        "kind": "view",
+        "description": "The values of an Apple .strings file, with the keys and comments left alone.",
+        "path": "assets/views/AppleStrings.yml",
+        "section": "*.strings",
+        "requires": ">=3.21.0",
+        "tags": [
+            "textfsm",
+            "i18n"
+        ]
+    },
+    {
+        "name": "CRD",
+        "kind": "view",
+        "description": "Every description in a Kubernetes CustomResourceDefinition's schema, read as Markdown.",
+        "path": "assets/views/CRD.yml",
+        "section": "*.{yml,yaml}",
+        "requires": ">=3.14.0",
+        "tags": [
+            "dasel",
+            "api"
         ]
     },
     {
@@ -55,6 +184,54 @@
         "tags": [
             "textfsm",
             "git"
+        ]
+    },
+    {
+        "name": "GraphQL",
+        "kind": "view",
+        "description": "The block and single-line descriptions in a GraphQL schema, read as Markdown.",
+        "path": "assets/views/GraphQL.yml",
+        "section": "*.{graphql,graphqls}",
+        "requires": ">=3.21.0",
+        "tags": [
+            "textfsm",
+            "api"
+        ]
+    },
+    {
+        "name": "I18nJSON",
+        "kind": "view",
+        "description": "Every string in an i18n JSON file, flat or nested, with the keys left alone.",
+        "path": "assets/views/I18nJSON.yml",
+        "section": "locales/en.json",
+        "requires": ">=3.14.0",
+        "tags": [
+            "dasel",
+            "i18n"
+        ]
+    },
+    {
+        "name": "I18nYAML",
+        "kind": "view",
+        "description": "Every string in a Rails-style locale file, with the keys left alone.",
+        "path": "assets/views/I18nYAML.yml",
+        "section": "config/locales/en.yml",
+        "requires": ">=3.14.0",
+        "tags": [
+            "dasel",
+            "i18n"
+        ]
+    },
+    {
+        "name": "JSONSchema",
+        "kind": "view",
+        "description": "Every title and description in a JSON Schema, written in JSON or YAML.",
+        "path": "assets/views/JSONSchema.yml",
+        "section": "*.schema.{json,yml,yaml}",
+        "requires": ">=3.14.0",
+        "tags": [
+            "dasel",
+            "api"
         ]
     },
     {
@@ -101,6 +278,36 @@
         "tags": [
             "textfsm",
             "ai"
+        ]
+    },
+    {
+        "name": "WebVTT",
+        "kind": "view",
+        "description": "The cue text of a WebVTT file, with the header, identifiers, timings, and notes left alone.",
+        "path": "assets/views/WebVTT.yml",
+        "section": "*.vtt",
+        "requires": ">=3.21.0",
+        "tags": [
+            "textfsm",
+            "media"
+        ]
+    },
+    {
+        "name": "AWS",
+        "kind": "vocabulary",
+        "description": "AWS service and tool names the built-in dictionary doesn't know, such as Textract, FSx, and botocore.",
+        "path": "assets/vocabularies/AWS/accept.txt",
+        "tags": [
+            "cloud"
+        ]
+    },
+    {
+        "name": "Kubernetes",
+        "kind": "vocabulary",
+        "description": "Kubernetes resource kinds and ecosystem tools the built-in dictionary doesn't know, such as kubeadm, CSIDriver, and kustomize.",
+        "path": "assets/vocabularies/Kubernetes/accept.txt",
+        "tags": [
+            "cloud"
         ]
     }
 ]

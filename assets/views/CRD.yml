@@ -1,0 +1,11 @@
+# A Kubernetes CustomResourceDefinition: every `description` in each
+# version's `openAPIV3Schema`, read as Markdown.
+#
+#   [*.{yml,yaml}]
+#   BasedOnStyles = Vale
+#   View = CRD
+engine: dasel
+scopes:
+  - name: description
+    expr: 'search(has("openAPIV3Schema")).map(openAPIV3Schema).search(has("description")).map(description)'
+    type: md
